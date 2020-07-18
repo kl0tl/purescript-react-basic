@@ -70,10 +70,16 @@ foreign import elementKeyed ::
 -- | __*See also:* `element`, `toReactComponent`__
 foreign import data ReactComponent :: Type -> Type
 
+type role ReactComponent representational
+
 -- | A React Ref, as created by `React.createRef`
 foreign import data Ref :: Type -> Type
 
+type role Ref representational
+
 foreign import data ReactContext :: Type -> Type
+
+type role ReactContext representational
 
 -- | Create a `ReactContext` given a default value. Use `provider` and `consumer`
 -- | to provide and consume context values. Alternatively, use `contextProvider`
