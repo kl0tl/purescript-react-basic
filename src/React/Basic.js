@@ -4,25 +4,25 @@ const React = require("react");
 const createElement = React.createElement;
 const Fragment = React.Fragment;
 
-exports.empty = null;
+export var empty = null;
 
-exports.keyed = (key) => (child) =>
+export var keyed = (key) => (child) =>
   createElement(Fragment, { key: key }, child);
 
-exports.element = (component) => (props) =>
+export var element = (component) => (props) =>
   Array.isArray(props.children)
     ? createElement.apply(null, [component, props].concat(props.children))
     : createElement(component, props);
 
-exports.elementKeyed = (component) => (props) =>
+export var elementKeyed = (component) => (props) =>
   createElement(component, props);
 
-exports.fragment = (children) =>
+export var fragment = (children) =>
   createElement.apply(null, [Fragment, null].concat(children));
 
-exports.createContext = (defaultValue) => () =>
+export var createContext = (defaultValue) => () =>
   React.createContext(defaultValue);
 
-exports.contextProvider = (context) => context.Provider;
+export var contextProvider = (context) => context.Provider;
 
-exports.contextConsumer = (context) => context.Consumer;
+export var contextConsumer = (context) => context.Consumer;

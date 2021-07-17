@@ -2,4 +2,4 @@
 
 const React = require("react");
 
-exports.strictMode_ = React.StrictMode;
+export var strictMode_ = React.StrictMode;
